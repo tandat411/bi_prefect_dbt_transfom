@@ -1,20 +1,17 @@
-import os
-
+from dotenv import dotenv_values
 from prefect import flow, task
-
 from prefect_airbyte.server import AirbyteServer
 from prefect_airbyte.connections import AirbyteConnection, AirbyteSyncResult
 from prefect_airbyte.flows import run_connection_sync
-
 from prefect_dbt.cli.commands import DbtCoreOperation
 
-
+config = dotenv_values(".env");
 
 remote_airbyte_server = AirbyteServer(
-    username="airbyte",
-    password="password",
-    server_host="localhost",
-    server_port="8000"
+    username = config["AIRBYTE_USERNAME"],
+    password = config["AIRBYTE_PASSWORD"],
+    server_host = config["AIRBYTE_SERVER_HOST"],
+    server_port = config["AIRBYTE_PORT"]
 )
 
 remote_airbyte_server.save("my-remote-airbyte-server", overwrite=True)
