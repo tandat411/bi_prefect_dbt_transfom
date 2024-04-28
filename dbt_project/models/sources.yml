@@ -1,0 +1,48 @@
+version: 2
+
+sources:
+  - name: snowflake
+    database: reports
+    schema: reports 
+    tables:
+      - name: nh_discount_code
+        description: This is a sample table.
+        columns:
+          - name: dc_id
+            description: Primary key of the table
+            tests:
+              - unique
+              - not_null
+          - name: cus_id
+            description: seller id
+          - name: dc_code
+            description: discount code
+          - name: dc_event
+            description: event
+          - name: dc_amount
+            description: discount price
+          - name: dc_status
+            description: status
+          - name: dc_deleted
+            description: is deleted (0 | 1)
+          - name: dc_end_time
+            description: Time end
+          - name: dc_use_time
+            description: Time used
+          - name: dc_start_time
+            description: Time start
+          - name: dc_created_time
+            description: Time created
+         
+  - name: postgres
+    database: username
+    schema: oms
+    tables: 
+      - name: nh_discount_code
+        description: This is a test tranform table.
+        columns:
+          - name: dc_id
+            description: Primary key of the table
+            tests:
+              - unique
+              - not_null

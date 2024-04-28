@@ -1,0 +1,34 @@
+dbt_project:
+  target: dev-postgres-transform
+  outputs:
+    dev-snowflake:
+      type: snowflake
+      account: vwcddll-tv33810
+      # User/password auth
+      user: datmlt
+      password: 123@Dcba
+      role: ACCOUNTADMIN
+      database: reports
+      warehouse: COMPUTE_WH
+      schema: reports
+      threads: 1
+      client_session_keep_alive: False
+      query_tag: anything
+      # optional
+      connect_retries: 0 # default 0
+      connect_timeout: 10 # default: 10
+      retry_on_database_errors: False # default: false
+      retry_all: False  # default: false
+      reuse_connections: False # default: false (available v1.4+)
+
+    dev-postgres-transform:
+      type: postgres
+      host: localhost
+      user: username
+      password: password
+      port: 5432
+      dbname: username # or database instead of dbname
+      schema: transform
+      #connect_timeout: 30 
+      #role: username
+      
