@@ -3,15 +3,15 @@ dbt_project:
   outputs:
     dev-snowflake:
       type: snowflake
-      account: vwcddll-tv33810
+      account: [account id]
       # User/password auth
-      user: datmlt
-      password: 123@Dcba
-      role: ACCOUNTADMIN
-      database: reports
-      warehouse: COMPUTE_WH
-      schema: reports
-      threads: 1
+      user: [username]
+      password: [password]
+      role: [user role]
+      database: [database name]
+      warehouse: [warehouse name]
+      schema: [dbt schema]
+      threads: [1 or more]
       client_session_keep_alive: False
       query_tag: anything
       # optional
