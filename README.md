@@ -8,12 +8,10 @@ This quickstart is designed to minimize setup hassles and propel you forward.
 
 - [Airbyte-dbt-Prefect-Snowflake Integration](#airbyte-dbt-prefect-snowflake-integration)
   - [Table of Contents](#table-of-contents)
-  - [Infrastructure Layout](#infrastructure-layout)
   - [Prerequisites](#prerequisites)
   - [1. Setting an environment for your project](#1-setting-an-environment-for-your-project)
-  - [2. Setting Up Airbyte Connectors with Terraform](#2-setting-up-airbyte-connectors-with-terraform)
-  - [3. Setting Up the dbt Project](#3-setting-up-the-dbt-project)
-  - [4. Orchestrating with Prefect](#4-orchestrating-with-Prefect)
+  - [2. Setting Up the dbt Project](#2-setting-up-the-dbt-project)
+  - [3. Orchestrating with Prefect](#3-orchestrating-with-Prefect)
   - [Next Steps](#next-steps)
 
 ## Prerequisites
@@ -43,18 +41,7 @@ Get the project up and running on your local machine by following these steps:
    pip install -e ".[dev]"
    ```
 
-## 2. Setting Up Airbyte Connectors with Terraform
-
-Airbyte allows you to create connectors for sources and destinations, facilitating data synchronization between various platforms. In this project, we're harnessing the power of Terraform to automate the creation of these connectors and the connections between them. Here's how you can set this up:
-
-1. **Navigate to the Airbyte Configuration Directory**:
-   
-   Change to the relevant directory containing the Terraform configuration for Airbyte:
-   ```bash
-   cd infra/airbyte
-   ```
-
-## 3. Setting Up the dbt Project
+## 2. Setting Up the dbt Project
 
 [dbt (data build tool)](https://www.getdbt.com/) allows you to transform your data by writing, documenting, and executing SQL workflows. Setting up the dbt project requires specifying connection details for your data platform, in this case, Snowflake. Here’s a step-by-step guide to help you set this up:
 
@@ -82,7 +69,7 @@ Airbyte allows you to create connectors for sources and destinations, facilitati
 
    If everything is set up correctly, this command should report a successful connection to Snowflake.
 
-## 4. Orchestrating with Prefect
+## 3. Orchestrating with Prefect
 
 [Prefect](https://prefect.io/) is an orchestration workflow tool that makes it easy to build, run, and monitor data workflows by writing Python code. In this section, we'll walk you through creating a Prefect flow to orchestrate both Airbyte extract and load operations, and dbt transformations with Python:
 

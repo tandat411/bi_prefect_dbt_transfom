@@ -1,10 +1,11 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="bi-airbyte-dbt-prefect-snowflake",
+    name="bi-airbyte-dbt-prefect",
     packages=find_packages(),
     install_requires=[
         "python-dotenv",
+        "dbt-mysql",
         "dbt-postgres",
         "dbt-snowflake",
         "prefect",

@@ -32,3 +32,12 @@ dbt_project:
       #connect_timeout: 30 
       #role: username
       
+    dev-mysql:
+      # Required
+      type: mysql
+      server: localhost
+      schema: geadb # The same with database
+      username: root
+      password: 
+      # Optional
+      port: 3306
